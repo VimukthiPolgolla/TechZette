@@ -1,0 +1,106 @@
+{% extends "base2.html" %}
+{% block style %}
+
+{% endblock %}
+{% block title %}TechZette - Add Items{% endblock %}
+{% if Email != None %}
+        {% block name %}{{ Email }}{% endblock %}
+{% endif %}
+{% block content %}
+
+<!-- Section 1 -->
+<section class="w-full">
+
+    <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-12/12 xl:w-12/12">
+                    <form method="POST">
+                <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
+
+                    <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-400 lg:text-5xl xl:text-6xl sm:mb-3 uppercase">Add your products</h1>
+                    <div class="relative w-full mt-10 space-y-4 bg-gray-800 py-10 px-10 rounded-xl">
+                        <div class="relative">
+                            <label class="font-medium text-white text-2xl">Brand</label>
+                            <input id="brand" name="brand" type="text" class="block w-full px-4 py-4 mt-2 text-s placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Brand Name">
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white text-2xl">Product Name</label>
+                            <input type="text" id="name" name="name" class="block w-full px-4 py-4 mt-2 text-s placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Product Name" minlength="24" maxlength="42">
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white text-2xl">Description</label>
+                            <input type="text" id="description" name="description" class="block w-full px-4 py-10 mt-2 text-s placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Description" maxlength="510" minlength="380">
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white text-2xl">Image URL</label>
+                            <input type="text" id="image" name="image" class="block w-full px-4 py-4 mt-2 text-s placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Image URL">
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white text-2xl">Price</label>
+                            <input type="text" id="price" name="price" class="block w-full px-4 py-4 mt-2 text-s placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Price">
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white text-2xl">Category</label>
+                            <select name="category" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 mb-10">
+                                <option value="laptops">Laptop</option>
+                                <option value="processors">Processors</option>
+                                <option value="memory">Memory(RAM)</option>
+                                <option value="graphic">Graphic Cards</option>
+                                <option value="monitors">Monitors</option>
+                                <option value="motherboard">Motherboard</option>
+                                <option value="mouse">Mouse and Keyboards</option>
+                                <option value="storages">Storages</option>
+                                <option value="powersupply">Power Supply</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="relative mx-auto">
+                                <button type="submit" class="mr-6 inline-block px-16 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Add</button>
+<!--                                <a href="/remove2" class="inline-block px-16 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Remove >></a>-->
+                                <a href="/remove2" class="mr-10 inline-block px-10 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Remove >></a>
+
+                        </div>
+                    </div>
+
+                </div>
+                    </form>
+
+            </div>
+                {% if haveOrders %}
+            <div class="w-full bg-gray-200 lg:w-6/12 xl:w-7/12 mt-10 mb-10 rounded-xl">
+                <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-18">
+                    <h4 class="w-full text-3xl font-bold">ORDERS</h4>
+                        {% for i in range(length) %}
+                    <div class="relative w-full mt-10 space-y-1 ">
+                        <div class="relative">
+                            <label class="font-medium text-gray-900">Product:</label><label class="font-medium text-gray-900 ml-5">{{ products[i][3] }}</label>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-gray-900">Name: </label><label class="font-medium text-gray-900 ml-9">{{ products[i][0] }}</label>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-gray-900">Address:</label><label class="font-medium text-gray-900 ml-6">{{ products[i][1] }}</label>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-gray-900">Contact: </label><label class="font-medium text-gray-900 ml-6">{{ products[i][2] }}</label>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-gray-900">Payment:</label><label class="font-medium text-gray-900 ml-5">{{ products[i][4] }}</label>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-gray-900">Quantity:</label><label class="font-medium text-gray-900 ml-5">{{ products[i][5] }}</label>
+                        </div>
+
+                    </div>
+                        {% endfor %}
+
+                </div>
+            </div>
+                {% endif %}
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

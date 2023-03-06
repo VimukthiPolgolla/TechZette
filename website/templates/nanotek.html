@@ -1,0 +1,45 @@
+{% extends "base2.html" %}
+{% block title %}Nanotek{% endblock %}
+{% block style %}
+{% endblock %}
+{% if Email != None %}
+        {% block name %}{{ Email }}{% endblock %}
+{% endif %}
+
+{% block content %}
+
+
+<section class="relative w-full">
+    <div class="absolute w-full h-32"></div>
+    <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-400 lg:text-5xl xl:text-6xl sm:mb-3">Nanotek</h1>
+<!--        <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app.</p>-->
+        <div class="flex grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16">
+            {% for name in nameList %}
+            {% if productList[name]['Owner'] == 'Nanotek' %}
+            <div class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 relative flex flex-col items-start justify-end h-100 col-span-12 overflow-hidden rounded-xl group md:col-span-6 xl:col-span-4">
+                <div class="relative z-20 w-full h-auto py-8 text-white bg-white border-t-0 border-white px-7 rounded-t-xl">
+                    <a class="block w-full bg-center bg-cover h-80" style="background-image:url({{productList[name]['URL']}})"></a>
+                </div><div class="relative z-20 w-full h-auto py-8 text-white bg-gray-800 border-t-0 border-white px-7">
+                    <h2 class="mb-5 text-2xl font-bold">{{productList[name]['Name']}}</h2>
+                    <p class="mb-1 text-lg font-normal text-white opacity-100">Price: {{productList[name]['Price']}}LKR</p>
+<!--                    <div class="flex grid h-full grid-cols-2 gap-4">-->
+                        <div class="relative" >
+                            <form method="POST">
+                            <button type="submit" value="{{productList[name]['Name']}}" name="product" class="inline-block w-full px-5 py-2 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease mt-5">More Info</button>
+                            </form>
+                        </div>
+                </div>
+
+            </div>
+            {% endif %}
+                {% endfor %}
+
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+{% endblock %}

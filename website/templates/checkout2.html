@@ -1,0 +1,67 @@
+{% extends "base2.html" %}
+{% block style %}
+
+{% endblock %}
+{% block title %}TechZette - Checkout{% endblock %}
+{% block name %}{{ email }}{% endblock %}
+{% block content %}
+<section class="relative w-full" style="padding-bottom: 500px;">
+    <div class="absolute w-full h-32"></div>
+    <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl ">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-400 lg:text-5xl xl:text-6xl sm:mb-3">CHECKOUT</h1>
+        <P class="text-2xl mt-10 text-white">Billing Information</P>
+        <form method="post">
+
+        <div class="flex grid bg-gray-800 py-10 px-10 grid-cols-2 gap-20 pb-5 mt-8 sm:mt-8 rounded-xl font-medium">
+            <div>
+                <div>
+                    <label class="font-medium text-lg text-white">Name</label>
+                    <input id="firstName" name="firstName" required type="text" class="block w-full px-4 py-4 mt-2 mb-4 text-lg placeholder-gray-400 bg-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Name">
+                </div>
+                <div>
+                    <label class="font-medium text-lg text-white">Address</label>
+                    <input type="text" id="address" name="address" required class="block w-full px-4 py-4 mt-2 mb-4 text-lg placeholder-gray-400 bg-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Address">
+                </div>
+                <div>
+                    <label class="font-medium text-lg text-white">Contact Number</label>
+                    <input id="number" name="number" required type="tel" class="block w-full px-4 py-4 mt-2 mb-4 text-lg placeholder-gray-400 bg-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Contact Number">
+                </div>
+                <div class="block mb-6">
+                    <span class=" font-medium text-lg text-white">Payment Method</span>
+                    <div class="mt-2">
+                        <div>
+                            <label class="inline-flex items-center">
+                            <input type="radio" class="form-radio " id="cash" name="payment_type" value="cash"/><span class="ml-2 text-lg text-white">Cash On Delivery</span>
+                            </label>
+                        </div>
+<!--                        <div>-->
+<!--                            <label class="inline-flex items-center mt-2">-->
+<!--                            <input type="radio" class="form-radio" id="credit" name="payment_type" value="credit"/><span class="ml-2 text-lg">Card Payment</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+                    </div>
+                  </div>
+            </div>
+
+            <div class="relative z-20 w-auto h-96 rounded-xl py-8 text-black text-lg bg-gray-300 border-t-0 border-white px-16">
+                <div class="flex grid grid-cols-2 grid-rows-5">
+                    <div class="mb-6 text-center text-2xl font-extrabold col-span-2"><p>CART DETAILS</p></div>
+                    <div><p>Total</p></div>
+                    <div class="text-right"><p>{{ total }} LKR</p></div>
+                    <div><p>Delivery</p></div>
+                    <div class="text-right"><p>Free</p></div>
+                    <div><p>Sub Total</p></div>
+                    <div class="text-right"><p>{{ total }} LKR</p></div>
+                    <div class="col-span-2">
+                        <button type="submit" class="inline-block w-full px-5 py-2 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease mt-5">Place Your Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

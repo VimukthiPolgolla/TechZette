@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport", content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+
+    <title>Welcome to TechZette</title>
+</head>
+
+<body style="background-image: url({{ url_for('static',filename='images/wallpapersden.com_swirl-digital-abstract_1920x1080.jpg') }}); background-repeat: no-repeat;">
+<section class="relative w-full">
+    <div class="absolute w-full h-32"></div>
+    <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-5xl font-extrabold leading-none text-center text-yellow-300 tracking-wider lg:text-6xl xl:text-7xl sm:mb-3 uppercase">Techzette</h1>
+
+        <section class="relative w-full">
+            <div class="absolute w-full h-32"></div>
+            <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+                <div class="flex grid h-full grid-cols-2 grid-rows-1 gap-20 pb-5 mt-8 sm:mt-8">
+                    <a href="/ecommerce">
+                    <button class="group relative z-20 w-auto h-80 rounded-3xl py-8 text-white text-xl shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-white hover:bg-black border-2 hover:border-white border-black px-7">
+                        <p class="mb-1 text-5xl text-center font-extrabold text-black opacity-100 group-hover:text-white uppercase">Laptops & Accessories </p>
+                        <p class="mt-4 text-2xl text-black font-semibold opacity-100 group-hover:text-white">Buy Your Favorite Tech Items or Become a Verified Seller</p>
+                    </button>
+                    </a>
+                    <a href="/partnerHomepage">
+                    <button class="group relative z-20 w-auto h-80 rounded-3xl py-8 text-white text-xl shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-white hover:bg-black border-2 hover:border-white border-black px-7">
+                        <p class="mb-1  text-5xl text-center font-extrabold text-black opacity-100 group-hover:text-white uppercase">Partners & PC Build </p>
+                        <p class="mt-4 text-2xl text-black font-semibold opacity-100 group-hover:text-white">Buy and Build Your PC From Our Verified Tech Partners</p>
+                    </button>
+                        </a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+</body>
+</html>

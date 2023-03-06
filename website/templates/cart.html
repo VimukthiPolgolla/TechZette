@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block style %}
+
+{% endblock %}
+{% block title %}TechZette - Cart{% endblock %}
+{% block name %}{{ name }}{% endblock %}
+{% block content %}
+
+{% if haveCart %}
+<section class="">
+    <div class="w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-300 lg:text-5xl xl:text-6xl sm:mb-3">CART</h1>
+<div class="bg-gray-800 py-10 px-10 mt-10 rounded-xl">
+        <div class="flex grid h-10 grid-cols-7 bg-gray-300 gap-10 pb-5 rounded-md font-medium text-center">
+            <div class=" h-10 mt-2"><p>PRODUCT</p></div>
+            <div class="h-10 mt-2 col-span-2"></div>
+            <div class="h-10 mt-2"><p>UNIT PRICE</p></div>
+            <div class="h-10 mt-2"><p>QTY</p></div>
+            <div class="h-10 mt-2"><p>TOTAL</p></div>
+            <div class="h-10 mt-2"><p></p></div>
+        </div>
+        {% for i in range(length) %}
+        <div class="flex grid h-auto grid-cols-7 grid-row-2 gap-10 mt-8 sm:mt-8 text-md">
+            <div>
+                <img class="rounded-xl" src={{ images[i] }}>
+            </div>
+            <div  class="relative z-20 w-auto h-auto rounded-xl py-8 text-white border-t-0 border-white px-7 col-span-2">
+                <p>{{ products[i] }} </p>
+            </div>
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-white text-right border-t-0 border-white px-7">
+                <p>{{ prices[i] }}</p>
+            </div>
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-white text-right border-t-0 border-white px-7">
+                <p>{{ quantity[i] }}</p>
+            </div>
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-white text-right border-t-0 border-white px-7">
+                <p>{{ totalPrices[i] }}</p>
+            </div>
+            <form method="POST">
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-black text-right border-t-0 border-white px-7">
+                <button type="submit" style="color:red;" value="{{products[i]}}" name="cart">Remove</button>
+            </div>
+            </form>
+        </div>
+        {% endfor %}
+</div>
+        <div class="flex grid h-auto grid-cols-3 gap-10 mt-8 sm:mt-16">
+            <div></div>
+            <div></div>
+            <div class="relative z-20 w-auto h-auto rounded-md py-8 text-black text-lg bg-gray-300 border-t-0 border-white px-7">
+                <div class="flex grid grid-cols-2 grid-rows-4">
+                    <div class="mb-6 text-center text-2xl font-extrabold col-span-2"><p>CART DETAILS</p></div>
+                    <div><p>Total</p></div>
+                    <div class="text-right"><p>{{ total }} LKR</p></div>
+                    <div><p>Delivery</p></div>
+                    <div class="text-right"><p>Free</p></div>
+                    <div><p>Sub Total</p></div>
+                    <div class="text-right"><p>{{ total }} LKR</p></div>
+                    <div class="relative col-span-2">
+                        <a href="/checkout" class="inline-block w-full px-5 py-2 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease mt-3">Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% else %}
+<section class="w-full">
+    <div class="w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-300 lg:text-5xl xl:text-6xl sm:mb-3">CART</h1>
+        <div class="bg-gray-800 py-10 px-10 mt-10 rounded-xl">
+        <div class="flex grid h-10 grid-cols-7 bg-gray-300 gap-10 pb-5 rounded-md font-medium text-center">
+            <div class=" h-10 mt-2"><p>PRODUCT</p></div>
+            <div class="h-10 mt-2 col-span-2"></div>
+            <div class="h-10 mt-2"><p>UNIT PRICE</p></div>
+            <div class="h-10 mt-2"><p>QTY</p></div>
+            <div class="h-10 mt-2"><p>TOTAL</p></div>
+        </div>
+        <div class="flex grid h-auto grid-cols-6 grid-row-2 gap-10 mt-8 sm:mt-8 text-md">
+            <div>
+            </div>
+            <div  class="relative z-20 w-auto h-auto rounded-xl py-8 text-white border-t-0 border-white px-7 col-span-2">
+                <p>-----</p>
+            </div>
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-white text-right border-t-0 border-white px-7">
+                <p>-----</p>
+            </div>
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-white text-right border-t-0 border-white px-7">
+                <p>-----</p>
+            </div>
+            <div style="text-align:center;" class="relative z-20 w-auto h-auto rounded-xl py-8 text-white text-right border-t-0 border-white px-7">
+                <p>-----</p>
+            </div>
+        </div>
+        </div>
+        <div class="flex grid h-auto grid-cols-3 gap-10 mt-8 sm:mt-16">
+            <div></div>
+            <div></div>
+            <div class="relative z-20 w-auto h-auto rounded-md py-8 text-black text-lg bg-gray-300 border-t-0 border-white px-7">
+                <div class="flex grid grid-cols-2 grid-rows-4">
+                    <div class="mb-6 text-center text-2xl font-extrabold col-span-2"><p>CART DETAILS</p></div>
+                    <div><p>Total</p></div>
+                    <div class="text-right"><p>0 LKR</p></div>
+                    <div><p>Delivery</p></div>
+                    <div class="text-right"><p>Free</p></div>
+                    <div><p>Sub Total</p></div>
+                    <div class="text-right"><p>0 LKR</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

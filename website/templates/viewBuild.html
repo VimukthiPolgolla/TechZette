@@ -1,0 +1,58 @@
+{% extends "base2.html" %}
+{% block style %}
+
+{% endblock %}
+{% if Email != None %}
+        {% block name %}{{ Email }}{% endblock %}
+{% endif %}
+
+{% block title %}TechZette - PC View{% endblock %}
+{% block content %}
+
+<section class="relative w-full">
+    <div class="absolute w-full h-32"></div>
+    <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-400 lg:text-5xl xl:text-6xl sm:mb-3 uppercase">view your PC</h1>
+<!--        <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app.</p>-->
+
+<!--        <div class="flex grid h-full grid-cols-1 grid-rows-2 gap-10 pb-5 mt-8 sm:mt-16">-->
+            <div class="relative z-20 w-96 h-96 mx-auto my-16 py-8 text-white bg-white border-t-0 border-white px-7 rounded-xl">
+                <a class="block w-100 bg-center bg-cover h-72" style="background-image:url(https://5.imimg.com/data5/SELLER/Default/2021/2/SE/NA/HL/6529381/whatsapp-image-2021-02-09-at-11-00-31-am-500x500.jpeg)"></a>
+            </div>
+            <div class="relative z-20 mb-8 mx-40 w-auto h-auto rounded-xl py-8 text-white text-xl bg-gray-800 border-t-0 border-white px-7">
+                <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Processor: </b> {{ products[0] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[0] }}</p>
+                    <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Memory: </b> {{ products[1] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[1] }}</p>
+                    <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Graphic Card: </b> {{ products[2] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[2] }}</p>
+                    <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Monitor: </b> {{ products[3] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[3] }}</p>
+                    <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Motherboard: </b> {{ products[4] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[4] }}</p>
+                    <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Storage: </b> {{ products[5] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[5] }}</p>
+                <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Power Supply: </b> {{ products[6] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[6] }}</p>
+                <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Other Components: </b> {{ products[7] }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price: </b> {{ prices[7] }}</p>
+                <br><br><p class="mb-8 text-2xl text-justify font-normal text-white opacity-100"><b>Total: </b> {{ total }}</p>
+                <div class="relative">
+                <form method="POST">
+                    <div class="">
+                        <div class="relative">
+                            <button type="submit" value="{{ Name }}" name="cart" class="inline-block w-full px-5 py-2 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Add to Cart</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+
+
+<!--        </div>-->
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base2.html" %}
+{% block title %}TechZette - Product{% endblock %}
+{% if Email != None %}
+        {% block name %}{{ Email }}{% endblock %}
+{% endif %}
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="relative w-full">
+    <div class="absolute w-full h-32"></div>
+    <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-400 lg:text-4xl xl:text-4xl sm:mb-3">{{ Name }}</h1>
+<!--        <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app.</p>-->
+
+        <div class="flex grid h-full grid-cols-3 grid-rows-1 gap-10 pb-5 mt-8 sm:mt-16">
+            <div class="relative z-20 w-full h-auto py-8 text-white bg-white border-t-0 border-white px-7 rounded-xl">
+                <a href="#_" class="block w-full bg-center bg-cover h-80" style="background-image:url({{ Image }})"></a>
+            </div>
+            <div class="relative z-20 w-auto h-auto col-span-2 rounded-xl py-8 text-white text-xl bg-gray-800 border-t-0 border-white px-7">
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100">{{ Desc }} </p>
+                <br><p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Brand:</b> {{ Brand }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Seller: </b> {{ Owner }}</p>
+                <p class="mb-1 text-xl text-justify font-normal text-white opacity-100"><b>Price:</b> {{ Price }} LKR </p>
+            </div>
+            <div class="relative">
+                <form method="POST">
+                    <div class="flex grid h-auto grid-cols-2 grid-rows-2 gap-4">
+                        <div>
+                            <label for="quantity" style="padding-right:15px; padding-left:10px;" class="text-white">Qty:</label>
+                            <input style="width:60%;" type="number" class="inline-block px-5 py-2 text-lg font-medium text-center text-black transition duration-200 rounded-lg ease" value="1" id="quantity" name="quantity" min="1" max="10">
+                        </div>
+
+                        <div class="relative">
+                            <button type="submit" value="{{ Name }}" name="cart" class="inline-block w-full px-5 py-2 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Add to Cart</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base2.html" %}
+{% block title %}TechZette - SignUp{% endblock %}
+{% block content %}
+<!-- Section 1 -->
+<section class="w-full">
+
+    <div class="mx-auto">
+        <div class="flex flex-col lg:flex-row">
+            <div class="relative w-full lg:w-6/12 xl:w-7/12 bg-gradient-to-r from-white via-white to-gray-100" style="background-image: url(https://wallpaperaccess.com/full/1202897.jpg); background-repeat: no-repeat;">
+                <div class="relative flex flex-col items-center justify-center w-full h-full px-10 my-20 lg:px-16 lg:my-0">
+                    <div class="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
+                        <div class="relative">
+                            <h2 class="text-5xl font-bold text-white xl:text-6xl">TECHZETTE</h2>
+                        </div>
+                        <p class="text-2xl text-white">Build your PC from us with popular <b>Brands</b> and <b>Tech companies</b> in <b>Sri Lanka</b>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full bg-gray-800 lg:w-6/12 xl:w-5/12">
+                <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
+                    <form method="POST">
+                    <h4 class="w-full text-3xl font-bold text-white">Signup</h4>
+                    <p class="text-lg text-gray-200">or, if you have an account you can <a href="/login2" class="text-yellow-400 underline">Login</a></p>
+                    <div class="relative w-full mt-10 space-y-8">
+                        <div class="relative">
+                            <label class="font-medium text-white">Name</label>
+                            <input required type="text" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" id="firstName" name="firstName" placeholder="Enter Your Name" required>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white">Username</label>
+                            <input required type="text" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" id="email" name="email" placeholder="Enter Your Username" required>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white">Password</label>
+                            <input required type="password" id="password1" name="password1" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Password" required>
+                        </div>
+                        <div class="relative">
+                            <label class="font-medium text-white">Confirm Password</label>
+                            <input required type="password" id="password2" name="password2" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Enter Your Password Again" required>
+                        </div>
+
+                        <div class="relative">
+                            <label class="font-medium text-white">Account Type</label>
+                            <select name="acc_type" class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50">
+                                <option value="customer">Buyer</option>
+<!--                                <option value="seller">Seller</option>-->
+                            </select>
+                        </div>
+
+                        <div class="relative">
+                            <button class="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease mt-10" type="submit">Create Account</button>
+<!--                            <a class="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease mt-10">Create Account</a>-->
+                        </div>
+                    </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

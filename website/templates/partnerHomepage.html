@@ -1,0 +1,150 @@
+{% extends "base2.html" %}
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+
+{% endblock %}
+{% if Email != None %}
+        {% block name %}{{ Email }}{% endblock %}
+{% endif %}
+{% block sell %}
+    {% if isShop == True %}
+    <a href="/addItems2" class="mr-5 font-medium leading-6 text-white">Sell</a>
+    {% else %}
+
+    {% endif %}
+{% endblock %}
+
+{% block title %}TechZette - Partners & PC Build{% endblock %}
+{% block content %}
+<!-- Section 1 -->
+<section class="w-full px-3 antialiased bg-green-900 lg:px-6">
+    <div class="mx-auto max-w-7xl">
+        <div class="container py-32 mx-auto text-center sm:px-4">
+
+            <h1 class="text-4xl font-extrabold leading-10 text-white sm:text-5xl sm:leading-none md:text-6xl xl:text-7xl"><span class="inline-block">WELCOME</span> <span class="relative inline-block mt-3 text-transparent text-white text-5xl">to</span><span class="relative block mt-3  text-white text-8xl tracking-wider text-yellow-300">TECHZETTE</span></h1>
+            <div class="max-w-lg mx-auto mt-6 text-sm text-center text-white md:mt-12 sm:text-base md:max-w-xl md:text-lg xl:text-xl">
+                Sri Lanka's 1st-Ever Online Platform Where all the Tech Giants are gathering !
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative w-full" style="background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/12/HD-Abstract-Green-Background.jpg);">
+    <div class="absolute w-full h-32"></div>
+    <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <div class="flex grid h-full grid-cols-2 grid-rows-1 gap-20 pb-5 mt-8 sm:mt-8">
+            <a href="/partners">
+            <button class="group relative z-20 w-auto h-80 rounded-3xl py-8 text-white text-xl shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-white hover:bg-black border-2 hover:border-white border-black px-7">
+                <p class="mb-1 text-5xl text-center font-extrabold text-black group-hover:text-white opacity-100 uppercase">Partners </p>
+                <p class="mt-4 text-2xl text-black font-semibold opacity-100 group-hover:text-white">Our Most Trusted And Verified Tech Partners</p>
+            </button>
+            </a>
+            <a href="/pcbuild">
+            <button class="group relative z-20 w-auto h-80 rounded-3xl py-8 text-white text-xl shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-white hover:bg-black border-2 hover:border-white border-black px-7">
+                <p class="mb-1 text-5xl text-center font-extrabold text-black group-hover:text-white opacity-100 uppercase">Build your pc </p>
+                <p class="mt-4 text-2xl text-black font-semibold opacity-100 group-hover:text-white">Build Your Dream PC From Your Favorite Tech Partner</p>
+            </button>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Section 2 -->
+<section class="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-24 lg:py-32">
+    <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
+        <div class="flex flex-col w-full md:flex-row ml-20">
+
+            <!-- Top Text -->
+
+            <div class="flex justify-between">
+                <h1 class="relative flex flex-col text-6xl font-extrabold text-left text-black">
+                    Sri Lanka's
+                    <span>1st Virtual </span>
+                    <span>Platform</span>
+                </h1>
+            </div>
+            <!-- Right Image -->
+            <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Flag-map-of-sri-lanka.png" class="object-cover mt-3 mr-32 h-80 lg:h-96">
+            </div>
+        </div>
+
+        <!-- Separator -->
+        <div class="my-16 border-b border-gray-300 lg:my-24"></div>
+
+        <!-- Bottom Text -->
+        <h2 class="text-left text-gray-900 text-2xl text-center">
+            Moving on to a new era of technology with the most popular and verified Tech Giants in <span class="text-4xl font-bold">Sri Lanka</span>
+        </h2>
+    </div>
+</section>
+
+<!-- Section 3 -->
+<section class="bg-green-900 pt-7 pb-14">
+    <div class="container px-8 mx-auto sm:px-12 lg:px-20">
+        <h1 class="text-2xl font-bold text-white tracking-wide text-center uppercase mt-5 mb-7">Trusted by top-leading companies.</h1>
+        <div class="flex grid items-center justify-center grid-cols-4 grid-cols-12 gap-y-8">
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="https://www.nanotek.lk/imgs/logo/logo-original-Black.png" alt="Disney Plus" class="block object-contain h-16">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="{{ url_for('static',filename='images/redline logo.png') }}" alt="Google" class="block object-contain h-20">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="https://www.laptop.lk/wp-content/uploads/2020/09/laptop-logo.png" alt="Hubspot" class="block object-contain h-9 h-10 lg:h-12">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="https://techzone.lk/wp-content/uploads/2021/02/tech_logo_400x125.png" alt="Youtube" class="block object-contain h-10 lg:h-16">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-6 xl:col-span-2">
+                <img src="https://www.gamestreet.lk/images/common/logo.png" alt="Slack" class="block object-contain h-16">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-6 xl:col-span-2">
+                <img src="https://www.chamacomputers.lk/imgs/logo.png" alt="Shopify" class="block object-contain h-9">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4 -->
+<section class="bg-green-900 pt-7 pb-14">
+    <div class="container px-8 mx-auto sm:px-12 lg:px-20">
+        <h1 class="text-xl font-bold tracking-wide text-center text-white uppercase mb-5">Trusted by top-leading Brands.</h1>
+        <div class="flex grid items-center justify-center grid-cols-4 grid-cols-12 gap-y-8">
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="{{ url_for('static',filename='images/PngItem_5357884.png') }}" alt="Disney Plus" class="block object-contain h-16">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="{{ url_for('static',filename='images/azus.png') }}" alt="Google" class="block object-contain h-10 ml-10">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="https://robbeekmans.net/wp-content/uploads/2017/09/nvidia_logo_horizontal.png" alt="Hubspot" class="block object-contain h-24 ml-24">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
+                <img src="{{ url_for('static',filename='images/acer.png') }}" alt="Youtube" class="block object-contain h-7 lg:h-10 ml-32">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-6 xl:col-span-2">
+                <img src="{{ url_for('static',filename='images/intelnew.png') }}" alt="Slack" class="block object-contain h-20 ml-24">
+            </div>
+            <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-6 xl:col-span-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Shopify" class="block object-contain h-20">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AlpineJS Library -->
+<script>
+    setTimeout(function(){
+        let activeSlide = document.querySelector('.slide.translate-x-0');
+        activeSlide.classList.remove('translate-x-0');
+        activeSlide.classList.add('-translate-x-full');
+
+        let nextSlide = activeSlide.nextElementSibling;
+        nextSlide.classList.remove('translate-x-full');
+        nextSlide.classList.add('translate-x-0');
+    }, 3000);
+</script>
+{% endblock %}

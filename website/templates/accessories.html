@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}TechZette - Accessories{% endblock %}
+{% block style %}
+
+{% endblock %}
+{% if Email != None %}
+        {% block name %}{{ Email }}{% endblock %}
+{% endif %}
+
+{% block content %}
+
+
+<section class="w-full">
+    <div class="w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-yellow-300 lg:text-5xl xl:text-6xl sm:mb-3">ACCESSORIES</h1>
+<!--        <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app.</p>-->
+
+        <div class="flex grid h-full grid-cols-2 grid-rows-8 gap-10 pb-5 mt-8 sm:mt-16">
+            <a href="/processors">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class=" text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Processors</p>
+            </div>
+            </a>
+            <a href="/memory">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class="text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Memory (RAM)</p>
+            </div>
+            </a>
+            <a href="/graphic">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class="text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Graphic Cards</p>
+            </div>
+                </a>
+            <a href="/monitors">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class="text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Monitors</p>
+            </div>
+                </a>
+            <a href="/motherboard">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class="text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Motherboards</p>
+            </div>
+                </a>
+            <a href="/mouse">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class="text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Mouse and Keyboards</p>
+            </div>
+                </a>
+            <a href="/storages">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class=" text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Storages</p>
+            </div>
+                </a>
+            <a href="/other">
+            <div class="relative z-20 w-auto h-auto rounded-xl py-8 text-black bg-white text-xl px-7 transition duration-500 ease-in-out hover:text-white transform hover:-translate-y-1 hover:scale-110 hover:bg-black border-2 hover:border-white border-black px-7" >
+                <p class=" text-3xl text-center font-extrabold tracking-wider opacity-100 my-7 uppercase">Other</p>
+            </div>
+                </a>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+{% endblock %}
